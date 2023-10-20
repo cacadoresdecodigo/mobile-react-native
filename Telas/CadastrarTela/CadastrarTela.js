@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import styles from "./LoginTelaStyle";
+import styles from "./CadastrarTelaStyle";
 
-export default function LoginTela(){
+export default function CadastrarTela(){
     return(
         <View style={styles.container}>
             <Text>Tela Login</Text>
