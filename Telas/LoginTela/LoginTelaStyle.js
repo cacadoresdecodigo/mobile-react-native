@@ -8,9 +8,6 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 35,
   },
-  title: {
-    fontSize: 25,
-  },
   viewImagem: {
     justifyContent: "center",
     alignItems: "center",
@@ -60,7 +57,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#2A5A63",
   },
-  divisor: {           
+  divisor: {
     backgroundColor: "#FFCF48",
     borderColor: "#FFCF48",
     borderWidth: 0.8,

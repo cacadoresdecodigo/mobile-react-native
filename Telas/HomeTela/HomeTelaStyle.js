@@ -7,9 +7,6 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 150,
   },
-  title: {
-    fontSize: 25,
-  },
   viewImagem: {
     justifyContent: "center",
     alignItems: "center",
