@@ -11,7 +11,10 @@ export default function LoginTela() {
           <Image style={styles.imagem} source={require("../../assets/logo3-menor.png")} />
         </View>
 
-        <View style={styles.viewConteudo}>         
+        <View style={styles.viewConteudo}>
+          <Text style={styles.textoH1}>LOGIN</Text>
+
+          <View style={styles.divisor}></View>
 
           <Text style={styles.textoInput}>EMAIL</Text>
           <TextInput style={styles.inputs} />

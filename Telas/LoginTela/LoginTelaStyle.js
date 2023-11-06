@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",
     padding: 16,
-    paddingTop: 50,
+    paddingTop: 35,
   },
   title: {
     fontSize: 25,
@@ -19,6 +19,13 @@ const styles = StyleSheet.create({
     width: 275,
     height: 90,
   },
+  textoH1: {
+    fontSize: 26,
+    textAlign: "center",
+    color: "#2A5A63",
+    fontWeight: "600",
+    padding: 16,
+  },
   viewConteudo: {
     display: "flex",
     justifyContent: "center",
@@ -26,13 +33,14 @@ const styles = StyleSheet.create({
     paddingTop: 24,
   },
   textoInput: {
-    fontSize: 14,
-    paddingTop: 24,
+    fontSize: 16,
+    paddingTop: 30,
     paddingBottom: 4,
     color: "#2A5A63",
+    fontWeight: "600",
   },
   inputs: {
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderRadius: 10,
     borderColor: "#2A5A63",
     width: 320,
@@ -52,7 +60,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#2A5A63",
   },
-  
+  divisor: {           
+    backgroundColor: "#FFCF48",
+    borderColor: "#FFCF48",
+    borderWidth: 0.8,
+    borderRadius: 10,
+    width: 150,
+    height: 6,
+    marginTop: -15,
+  },
 });
 
 export default styles;

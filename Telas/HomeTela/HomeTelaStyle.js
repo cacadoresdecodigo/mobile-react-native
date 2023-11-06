@@ -25,10 +25,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#FFCF48",
     marginTop: 16,
+    borderColor: "#2A5A63",
   },
   textoBotao: {
     fontSize: 22,
     textAlign: "center",
+    color: "#2A5A63",
   },
 });
 
