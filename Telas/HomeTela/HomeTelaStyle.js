@@ -5,16 +5,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",
     padding: 16,
-    // justifyContent: "center",
-    
+    paddingTop: 150,
   },
   title: {
     fontSize: 25,
   },
   viewImagem: {
-   
     justifyContent: "center",
     alignItems: "center",
+    paddingBottom: 40,
   },
   imagem: {
     width: 350,
@@ -25,11 +24,11 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     backgroundColor: "#FFCF48",
-    marginTop: 8,
+    marginTop: 16,
   },
   textoBotao: {
     fontSize: 22,
-    textAlign:"center",
+    textAlign: "center",
   },
 });
 

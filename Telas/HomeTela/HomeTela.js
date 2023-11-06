@@ -14,7 +14,7 @@ export default function HomeTela() {
       </View>
 
       <TouchableOpacity style={styles.botao} title="Entrar" onPress={() => navigation.navigate("LoginTela")}>
-        <Text style={styles.textoBotao}>Entrar</Text>
+        <Text style={styles.textoBotao}>Login</Text>
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.botao} title="Cadastrar" onPress={() => navigation.navigate("CadastrarTela")}>

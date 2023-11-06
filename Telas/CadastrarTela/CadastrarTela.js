@@ -6,7 +6,7 @@ import styles from "./CadastrarTelaStyle";
 export default function CadastrarTela(){
     return(
         <View style={styles.container}>
-            <Text>Tela Login</Text>
+            <Text>Tela Cadastro</Text>
         </View>
     )
 }
