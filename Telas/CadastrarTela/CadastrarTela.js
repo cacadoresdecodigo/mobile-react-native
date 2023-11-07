@@ -1,16 +1,18 @@
 import React from "react";
 import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
 
 export default function CadastrarTela() {
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Header />
       <ScrollView>
         <View style={styles.viewConteudo}>
-        <Image style={styles.fotoAvatar} src={("https://i.pravatar.cc/300")} />
+          <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
           <Text style={styles.textoH1}>CRIE SUA CONTA</Text>
 
           <View style={styles.divisor}></View>
@@ -27,7 +29,11 @@ export default function CadastrarTela() {
           <Text style={styles.textoInput}>SENHA</Text>
           <TextInput style={styles.inputs} />
 
-          <TouchableOpacity style={styles.botao} title="Entrar" onPress={() => navigation.navigate("LoginTela")}>
+          <TouchableOpacity
+            style={styles.botao}
+            title="Entrar"
+            onPress={() => navigation.navigate("RetiradaTela")}
+          >
             <Text style={styles.textoBotao}>Cadastrar</Text>
           </TouchableOpacity>
         </View>

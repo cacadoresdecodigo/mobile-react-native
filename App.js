@@ -7,6 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import HomeTela from "./Telas/HomeTela/HomeTela";
 import LoginTela from "./Telas/LoginTela/LoginTela";
 import CadastrarTela from "./Telas/CadastrarTela/CadastrarTela";
+import RetiradaTela from "./Telas/RetiradaTela/RetiradaTela";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App() {
         />
         <Stack.Screen name="LoginTela" component={LoginTela} options={{ title: "Login" }} />
         <Stack.Screen name="CadastrarTela" component={CadastrarTela} options={{ title: "Cadastrar" }} />
+        <Stack.Screen name="RetiradaTela" component={RetiradaTela} options={{ title: "Local de Retirada" }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

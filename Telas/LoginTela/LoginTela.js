@@ -1,9 +1,11 @@
 import React from "react";
 import { Image, Text, View, TextInput, TouchableOpacity, ScrollView } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
 import styles from "./LoginTelaStyle";
 
 export default function LoginTela() {
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container}>
