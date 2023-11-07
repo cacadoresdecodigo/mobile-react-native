@@ -1,10 +1,13 @@
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View, Switch } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
 import Header from "../Header/Header";
 import styles from "./RetiradaTelaStyle";
 
 export default function RetiradaTela() {
+
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Header />
@@ -28,7 +31,7 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botao}
             title="Entrar"
-            onPress={() => navigation.navigate("LoginTela")}
+            onPress={() => navigation.navigate("PlanoTela")}
           >
             <Text style={styles.textoBotao}>Salvar</Text>
           </TouchableOpacity>

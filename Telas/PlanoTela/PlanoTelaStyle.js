@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   textoBotao: {
     fontSize: 22,
     textAlign: "center",
-    color: "#2A5A63",
+    color: "#ffff",
   },
   divisor: {
     backgroundColor: "#FFCF48",
@@ -53,6 +53,15 @@ const styles = StyleSheet.create({
     width: 150,
     height: 6,
     marginTop: -15,
+  },
+  botaoCancelar: {
+    width: 320,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#FF0000",
+    borderColor: "#2A5A63",
+    marginTop: 16,
   },
 });
 
