@@ -6,9 +6,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",
   },
-  title: {
-    fontSize: 25,
-  },
   textoH1: {
     fontSize: 26,
     textAlign: "center",
@@ -16,20 +13,29 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     padding: 16,
   },
+  ViewSwitch: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   viewConteudo: {
+    marginTop: 14,
     display: "flex",
     paddingTop: 24,
     justifyContent: "center",
     alignItems: "center",
   },
   textoSelect: {
+    width: 185,
+    textAlign: "center",
     backgroundColor: "#C0C0C0",
     fontSize: 16,
     margin: 10,
     padding: 10,
     borderRadius: 10,
     color: "#2A5A63",
-    fontWeight: "600",
+    fontWeight: "600",     
   },
   botao: {
     width: 320,
@@ -38,12 +44,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
-    marginTop: 16,
+    marginTop: 24,
   },
   textoBotao: {
     fontSize: 22,
     textAlign: "center",
-    color: "#ffff",
+    color: "#2A5A63",
   },
   divisor: {
     backgroundColor: "#FFCF48",
@@ -53,15 +59,21 @@ const styles = StyleSheet.create({
     width: 150,
     height: 6,
     marginTop: -15,
+    marginBottom: 24,
   },
   botaoCancelar: {
     width: 320,
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#FF0000",
-    borderColor: "#2A5A63",
+    backgroundColor: "#ab1d1d",
+    borderColor: "#C0C0C0",
     marginTop: 16,
+  },
+  textoBotaoCancelar: {
+    fontSize: 22,
+    textAlign: "center",
+    color: "#e3e3e3",
   },
 });
 

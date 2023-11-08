@@ -26,11 +26,9 @@ export default function App() {
         <Stack.Screen name="LoginTela" component={LoginTela} options={{ title: "Login" }} />
         <Stack.Screen name="CadastrarTela" component={CadastrarTela} options={{ title: "Cadastrar" }} />
         <Stack.Screen name="RetiradaTela" component={RetiradaTela} options={{ title: "Local de Retirada" }} />
-        <Stack.Screen name= "PlanoTela" component={PlanoTela} options={{title: "Planos"}} />
+        <Stack.Screen name="PlanoTela" component={PlanoTela} options={{ title: "Planos" }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
-
-

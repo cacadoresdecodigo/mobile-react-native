@@ -6,37 +6,39 @@ import Header from "../Header/Header";
 import styles from "./RetiradaTelaStyle";
 
 export default function RetiradaTela() {
-
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView>
-        <View style={styles.viewConteudo}>
-          <Text style={styles.textoH1}>ESCOLHA SEU LOCAL DE RETIRADA</Text>
+      <View style={styles.viewConteudo}>
+        <Text style={styles.textoH1}>LOCAL DE RETIRADA</Text>
 
-          <View style={styles.divisor}></View>
-
+        <View style={styles.divisor}></View>
+        
+        <View style={styles.ViewSwitch}>
           <Text style={styles.textoSelect}>FLORIPA SHOPPING</Text>
           <Switch style={styles.switch} />
+        </View>
 
-          <Text style={styles.textoSelect}>SHOPPING BEIRAMAR </Text>
+        <View style={styles.ViewSwitch}>
+          <Text style={styles.textoSelect}>SHOPPING BEIRAMAR</Text>
           <Switch style={styles.switch} />
+        </View>
 
+        <View style={styles.ViewSwitch}>
           <Text style={styles.textoSelect}>SHOPPING ITAGUAÇU</Text>
           <Switch style={styles.switch} />
+        </View>
 
+        <View style={styles.ViewSwitch}>
           <Text style={styles.textoSelect}>CONTINENTE SHOPPING</Text>
           <Switch style={styles.switch} />
-          <TouchableOpacity
-            style={styles.botao}
-            title="Entrar"
-            onPress={() => navigation.navigate("PlanoTela")}
-          >
-            <Text style={styles.textoBotao}>Salvar</Text>
-          </TouchableOpacity>
         </View>
-      </ScrollView>
+
+        <TouchableOpacity style={styles.botao} title="Plano" onPress={() => navigation.navigate("PlanoTela")}>
+          <Text style={styles.textoBotao}>Salvar</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

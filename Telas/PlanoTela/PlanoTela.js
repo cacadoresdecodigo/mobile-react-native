@@ -5,8 +5,7 @@ import Header from "../Header/Header";
 import styles from "./PlanoTelaStyle";
 
 export default function PlanoTela() {
-
-    const navigation = useNavigation()
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Header />
@@ -16,39 +15,33 @@ export default function PlanoTela() {
 
           <View style={styles.divisor}></View>
 
-          <Text style={styles.textoSelect}>
-            4 RETIRADAS/MÊS {"\n"}
-            R$19,90
-          </Text>
-          <Switch style={styles.switch} />
+          <View style={styles.ViewSwitch}>
+            <Text style={styles.textoSelect}>4 RETIRADAS/MÊS R$19,90</Text>            
+            <Switch style={styles.switch} />
+          </View>
 
-          <Text style={styles.textoSelect}>
-            8 RETIRADAS/MÊS {"\n"}
-            R$45,90
-          </Text>
-          <Switch style={styles.switch} />
+          <View style={styles.ViewSwitch}>
+            <Text style={styles.textoSelect}>8 RETIRADAS/MÊS R$45,90</Text>            
+            <Switch style={styles.switch} />
+          </View>
 
-          <Text style={styles.textoSelect}>
-            20 RETIRADAS/MÊS {"\n"}
-            R$99,90
-          </Text>
-          <Switch style={styles.switch} />
+          <View style={styles.ViewSwitch}>
+            <Text style={styles.textoSelect}>20 RETIRADAS/MÊS R$99,90</Text>            
+            <Switch style={styles.switch} />
+          </View>
 
-          <TouchableOpacity
-            style={styles.botao}
-            title="Entrar"
-            onPress={() => navigation.navigate("LoginTela")}
-          >
+          <TouchableOpacity style={styles.botao} title="Entrar" onPress={() => navigation.navigate("LoginTela")}>
             <Text style={styles.textoBotao}>Salvar</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          {/* Só vai aparecer o botão "Cancelar" quando tiver com o login ativo */}
+          {/* <TouchableOpacity
             style={styles.botaoCancelar}
             title="Entrar"
             onPress={() => navigation.navigate("LoginTela")}
           >
-            <Text style={styles.textoBotao}>Cancelar Plano</Text>
-          </TouchableOpacity>
+            <Text style={styles.textoBotaoCancelar}>Cancelar Plano</Text>
+          </TouchableOpacity> */}
         </View>
       </ScrollView>
     </View>
