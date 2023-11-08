@@ -26,11 +26,16 @@ export default function PlanoTela() {
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoSelect}>20 RETIRADAS/MÊS R$99,90</Text>            
+            <Text style={styles.textoSelect}>19 RETIRADAS/MÊS R$99,90</Text>            
             <Switch style={styles.switch} />
           </View>
 
-          <TouchableOpacity style={styles.botao} title="Entrar" onPress={() => navigation.navigate("LoginTela")}>
+          <View style={styles.ViewSwitch}>
+            <Text style={styles.textoSelect}>+20 RETIRADAS/MÊS R$159,90</Text>            
+            <Switch style={styles.switch} />
+          </View>
+
+          <TouchableOpacity style={styles.botao} title="Pagamento" onPress={() => navigation.navigate("PagamentoTela")}>
             <Text style={styles.textoBotao}>Salvar</Text>
           </TouchableOpacity>
 

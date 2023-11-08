@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native";
-import { StatusBar } from "expo-status-bar";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",
-  },
-  title: {
-    fontSize: 25,
   },
   textoH1: {
     fontSize: 26,
