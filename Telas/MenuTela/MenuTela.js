@@ -1,9 +1,10 @@
-import React from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import Header from "../Header/Header";
 import styles from "./MenuTelaStyle";
+
 
 export default function MenuTela() {
   const navigation = useNavigation();
