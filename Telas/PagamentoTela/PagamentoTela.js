@@ -33,7 +33,7 @@ export default function PagamentoTela() {
             <TextInput style={styles.inputsPagamento} placeholder="CVV"/>
           </View>
 
-          <TouchableOpacity style={styles.botao} title="Entrar" onPress={() => navigation.navigate("RetiradaTela")}>
+          <TouchableOpacity style={styles.botao} title="Pagamento" onPress={() => navigation.navigate("MenuTela")}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
           </TouchableOpacity>
         </View>
