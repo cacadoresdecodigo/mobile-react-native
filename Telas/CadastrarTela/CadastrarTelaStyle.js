@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 24,
+    paddingBottom: 24,
   },
   textoInput: {
     fontSize: 16,
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
     color: "#2A5A63",
     fontWeight: "600",
+    
   },
   inputs: {
     borderWidth: 1.5,
@@ -31,6 +33,9 @@ const styles = StyleSheet.create({
     borderColor: "#2A5A63",
     width: 320,
     height: 40,
+    padding: 4,
+    fontSize: 16,
+    color: "#2A5A63",
   },
   botao: {
     width: 320,

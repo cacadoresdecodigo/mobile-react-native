@@ -3,13 +3,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e3e3e3",
-    padding: 16,
-    paddingTop: 35,
+    backgroundColor: "#e3e3e3",   
+    paddingTop: 45,
   },
   viewImagem: {
     justifyContent: "center",
     alignItems: "center",
+    
   },
   imagem: {
     width: 275,
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 24,
+    paddingBottom: 24,
   },
   textoInput: {
     fontSize: 16,
@@ -41,6 +42,9 @@ const styles = StyleSheet.create({
     borderColor: "#2A5A63",
     width: 320,
     height: 40,
+    padding: 4,
+    fontSize: 16,
+    color: "#2A5A63",
   },
   botao: {
     width: 320,
