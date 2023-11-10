@@ -20,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="HomeTela"
           component={HomeTela}
           options={{
             title: "Home",
