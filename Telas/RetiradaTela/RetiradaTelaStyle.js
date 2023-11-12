@@ -26,28 +26,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  textoSelect: {
+  textoRetirada: {
     width: 240,
     textAlign: "center",
     backgroundColor: "#C0C0C0",
     fontSize: 16,
     margin: 10,
     padding: 10,
-    borderRadius: 10,
     color: "#2A5A63",
     fontWeight: "600",
   },
-  botao: {
-    width: 320,
+
+  botaoSelect: {
+    width: 55,
     borderWidth: 1,
-    padding: 10,
+    padding: 5,
     borderRadius: 10,
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
-    marginTop: 24,
   },
-  textoBotao: {
-    fontSize: 22,
+  textoSelect: {
+    fontSize: 14,
     textAlign: "center",
     color: "#2A5A63",
   },

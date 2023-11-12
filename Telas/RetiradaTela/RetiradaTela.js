@@ -14,30 +14,46 @@ export default function RetiradaTela() {
         <Text style={styles.textoH1}>LOCAL DE RETIRADA</Text>
 
         <View style={styles.divisor}></View>
-        
+
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoSelect}>FLORIPA SHOPPING</Text>
-          <Switch style={styles.switch} />
+          <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
+          <TouchableOpacity
+            style={styles.botaoSelect}
+            title="FloripaShopping"
+            onPress={() => navigation.navigate("PlanoTela")}>
+            <Text style={styles.textoSelect}>Clique</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoSelect}>SHOPPING BEIRAMAR</Text>
-          <Switch style={styles.switch} />
+          <Text style={styles.textoRetirada}>SHOPPING BEIRAMAR</Text>
+          <TouchableOpacity
+            style={styles.botaoSelect}
+            title="ShoppingBeiraMar"
+            onPress={() => navigation.navigate("PlanoTela")}>
+            <Text style={styles.textoSelect}>Clique</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoSelect}>SHOPPING ITAGUAÇU</Text>
-          <Switch style={styles.switch} />
+          <Text style={styles.textoRetirada}>SHOPPING ITAGUAÇU</Text>
+          <TouchableOpacity
+            style={styles.botaoSelect}
+            title="ShoppingItaguacu"
+            onPress={() => navigation.navigate("PlanoTela")}>
+            <Text style={styles.textoSelect}>Clique</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoSelect}>CONTINENTE SHOPPING</Text>
-          <Switch style={styles.switch} />
+          <Text style={styles.textoRetirada}>CONTINENTE SHOPPING</Text>
+          <TouchableOpacity
+            style={styles.botaoSelect}
+            title="ContinenteShopping"
+            onPress={() => navigation.navigate("PlanoTela")}>
+            <Text style={styles.textoSelect}>Clique</Text>
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity style={styles.botao} title="Plano" onPress={() => navigation.navigate("PlanoTela")}>
-          <Text style={styles.textoBotao}>Salvar</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );

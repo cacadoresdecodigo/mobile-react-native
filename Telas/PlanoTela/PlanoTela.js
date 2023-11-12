@@ -9,35 +9,50 @@ export default function PlanoTela() {
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView>
         <View style={styles.viewConteudo}>
           <Text style={styles.textoH1}>ESCOLHA SEU PLANO</Text>
 
           <View style={styles.divisor}></View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoSelect}>4 RETIRADAS/MÊS R$19,90</Text>            
-            <Switch style={styles.switch} />
+            <Text style={styles.textoPlano}>4 RETIRADAS/MÊS R$19,90</Text>
+            <TouchableOpacity
+              style={styles.botaoSelect}
+              title="RetiradaUm"
+              onPress={() => navigation.navigate("PagamentoTela")}>
+              <Text style={styles.textoSelect}>Clique</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoSelect}>8 RETIRADAS/MÊS R$45,90</Text>            
-            <Switch style={styles.switch} />
+            <Text style={styles.textoPlano}>8 RETIRADAS/MÊS R$45,90</Text>
+            <TouchableOpacity
+              style={styles.botaoSelect}
+              title="RetiradaDois"
+              onPress={() => navigation.navigate("PagamentoTela")}>
+              <Text style={styles.textoSelect}>Clique</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoSelect}>19 RETIRADAS/MÊS R$99,90</Text>            
-            <Switch style={styles.switch} />
+            <Text style={styles.textoPlano}>19 RETIRADAS/MÊS R$99,90</Text>
+            <TouchableOpacity
+              style={styles.botaoSelect}
+              title="RetiradaTres"
+              onPress={() => navigation.navigate("PagamentoTela")}>
+              <Text style={styles.textoSelect}>Clique</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoSelect}>+20 RETIRADAS/MÊS R$159,90</Text>            
-            <Switch style={styles.switch} />
+            <Text style={styles.textoPlano}>+20 RETIRADAS/MÊS R$159,90</Text>
+            <TouchableOpacity
+              style={styles.botaoSelect}
+              title="RetiradaQuatro"
+              onPress={() => navigation.navigate("PagamentoTela")}>
+              <Text style={styles.textoSelect}>Clique</Text>
+            </TouchableOpacity>
           </View>
-
-          <TouchableOpacity style={styles.botao} title="Pagamento" onPress={() => navigation.navigate("PagamentoTela")}>
-            <Text style={styles.textoBotao}>Salvar</Text>
-          </TouchableOpacity>
 
           {/* Só vai aparecer o botão "Cancelar" quando tiver com o login ativo */}
           {/* <TouchableOpacity
@@ -48,7 +63,6 @@ export default function PlanoTela() {
             <Text style={styles.textoBotaoCancelar}>Cancelar Plano</Text>
           </TouchableOpacity> */}
         </View>
-      </ScrollView>
     </View>
   );
 }
