@@ -3,21 +3,21 @@ import React from "react";
 import { ScrollView, Text, TextInput, View } from "react-native";
 
 import Header from "../Header/Header";
-import styles from "./HistoricoEntregaTelaStyle";
+import styles from "./HistoricoPagamentoTelaStyle.js";
 
-export default function HistoricoEntregaTela() {
+export default function HistoricoPagamentoTela() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Header />
       <ScrollView>
         <View style={styles.viewConteudo}>
-          <Text style={styles.textoH1}>HISTÓRICO ENTREGAS</Text>
+          <Text style={styles.textoH1}>HISTÓRICO PAGAMENTO</Text>
 
           <View style={styles.divisor}></View>
 
-          <Card name={"Entregue"}></Card>
-          <Card name={"Cancelado"}></Card>
+          <Card name={"Em atraso"}></Card>
+          <Card name={"Pago"}></Card>
           
         </View>
       </ScrollView>
@@ -29,10 +29,9 @@ function Card(props) {
   return (
     <View style={styles.ViewCard}>
       <Text style={styles.textoCard}>Status: {props.name}</Text>
-      <Text style={styles.textoCard}>Número pedido: 191919</Text>
-      <Text style={styles.textoCard}>Previsão de entrega: 01/01/2024</Text>
-      <Text style={styles.textoCard}>Data da entrega: 01/01/2024 Hora: 16:20 </Text>
-      <Text style={styles.textoCard}>Data da retirada: 02/01/2024 Hora: 20:20</Text>
+      <Text style={styles.textoCard}>Local Retirada: Floripa Shopping</Text> 
+      <Text style={styles.textoCard}>Plano: 159,90</Text>      
+      <Text style={styles.textoCard}>Data pagamento: 13/11/2023</Text>
     </View>
   );
 }

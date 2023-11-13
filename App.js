@@ -12,6 +12,7 @@ import PlanoTela from "./Telas/PlanoTela/PlanoTela";
 import PagamentoTela from "./Telas/PagamentoTela/PagamentoTela";
 import MenuTela from "./Telas/MenuTela/MenuTela";
 import HistoricoEntregaTela from "./Telas/HistoricoEntregaTela/HistoricoEntregaTela";
+import HistoricoPagamentoTela from "./Telas/HistoricoPagamentoTela/HistoricoPagamentoTela";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="PagamentoTela" component={PagamentoTela} options={{ title: "Pagamento" }} />
         <Stack.Screen name="MenuTela" component={MenuTela} options={{ title: "Menu" }} />
         <Stack.Screen name="HistoricoEntregaTela" component={HistoricoEntregaTela} options={{ title: "Histórico Entrega" }} />
+        <Stack.Screen name="HistoricoPagamentoTela" component={HistoricoPagamentoTela} options={{ title: "Histórico Pagamento" }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
