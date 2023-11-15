@@ -13,6 +13,11 @@ import PagamentoTela from "./Telas/PagamentoTela/PagamentoTela";
 import MenuTela from "./Telas/MenuTela/MenuTela";
 import HistoricoEntregaTela from "./Telas/HistoricoEntregaTela/HistoricoEntregaTela";
 import HistoricoPagamentoTela from "./Telas/HistoricoPagamentoTela/HistoricoPagamentoTela";
+import EditarPerfilTela from "./Telas/EditarPerfilTela/EditarPerfilTela";
+import EditarPlanoTela from "./Telas/EditarPlanoTela/EditarPlanoTela";
+import EditarPagamentoTela from "./Telas/EditarPagamentoTela/EditarPagamentoTela";
+import EditarRetiradaTela from "./Telas/EditarRetiradaTela/EditarRetiradaTela";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +40,10 @@ export default function App() {
         <Stack.Screen name="MenuTela" component={MenuTela} options={{ title: "Menu" }} />
         <Stack.Screen name="HistoricoEntregaTela" component={HistoricoEntregaTela} options={{ title: "Histórico Entrega" }} />
         <Stack.Screen name="HistoricoPagamentoTela" component={HistoricoPagamentoTela} options={{ title: "Histórico Pagamento" }} />
+        <Stack.Screen name="EditarPerfilTela" component={EditarPerfilTela} options={{ title: "Editar Perfil" }} />
+        <Stack.Screen name="EditarPlanoTela" component={EditarPlanoTela} options={{title: "Editar Plano"}} />
+        <Stack.Screen name="EditarPagamentoTela" component={EditarPagamentoTela} options={{title: "Editar Pagamento"}} />
+      <Stack.Screen name="EditarRetiradaTela" component={EditarRetiradaTela} options={{title: "Editar Retirada"}} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
