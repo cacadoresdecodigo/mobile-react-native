@@ -19,7 +19,7 @@ export default function EditarPerfilTela() {
     if (nome === "" || email === "" || senha === "") {
       Alert.alert("Atenção", "Todos os campos são obrigatórios");
     } else {
-      Alert.alert("Edição Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
+      Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
       navigation.goBack();
     }
     //aqui deve chamar a API usando Axios para cadastrar os dados do usuario no banco de dados
