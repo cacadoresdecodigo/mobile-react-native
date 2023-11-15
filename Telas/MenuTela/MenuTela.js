@@ -10,7 +10,7 @@ export default function MenuTela() {
   return (
     <View style={styles.container}>
       <Header />
-
+      <ScrollView>
       <View style={styles.viewConteudo}>
         <Text style={styles.textoH1}> MEU PERFIL</Text>
 
@@ -43,7 +43,7 @@ export default function MenuTela() {
         <TouchableOpacity
           style={styles.botao}
           title="Editar Pagamento"
-          onPress={() => navigation.navigate("EditarPerfilTela")}
+          onPress={() => navigation.navigate("EditarPagamentoTela")}
         >
           <Text style={styles.textoBotao}>Editar Pagamento</Text>
         </TouchableOpacity>
@@ -68,6 +68,7 @@ export default function MenuTela() {
           <Text style={styles.textoBotaoSair}>Sair</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     </View>
   );
 }
