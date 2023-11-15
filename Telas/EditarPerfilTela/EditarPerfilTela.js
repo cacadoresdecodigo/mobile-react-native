@@ -15,10 +15,11 @@ export default function EditarPerfilTela() {
   const [senha, setSenha] = useState("");
 
   function salvarEdicao() {
-    console.log({ nome, cpf, email, senha });
-    if (nome === "" || cpf === "" || email === "" || senha === "") {
+    console.log({ nome, email, senha });
+    if (nome === "" || email === "" || senha === "") {
       Alert.alert("Atenção", "Todos os campos são obrigatórios");
     } else {
+      Alert.alert("Edição Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
       navigation.goBack();
     }
     //aqui deve chamar a API usando Axios para cadastrar os dados do usuario no banco de dados
@@ -38,9 +39,6 @@ export default function EditarPerfilTela() {
           <Text style={styles.textoInput}>NOME</Text>
           <TextInput style={styles.inputs} value={nome} onChangeText={setNome} />
 
-          <Text style={styles.textoInput}>CPF</Text>
-          <TextInput style={styles.inputs} value={cpf} onChangeText={setCpf} keyboardType="numeric" />
-
           <Text style={styles.textoInput}>EMAIL</Text>
           <TextInput style={styles.inputs} value={email} onChangeText={setEmail} />
 
@@ -55,7 +53,3 @@ export default function EditarPerfilTela() {
     </View>
   );
 };
-
-
-
-

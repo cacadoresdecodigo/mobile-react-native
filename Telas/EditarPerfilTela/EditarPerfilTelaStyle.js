@@ -27,13 +27,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     
   },
-  inputNaoEditavel: {
-    fontSize: 16,
-    paddingTop: 30,
-    paddingBottom: 4,
-    color: '#5C5C5C',
-    fontWeight: "600",
-  },
   inputs: {
     borderWidth: 1.5,
     borderRadius: 10,
@@ -52,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
     marginTop: 16,
-  },
+  },  
   textoBotao: {
     fontSize: 22,
     textAlign: "center",
