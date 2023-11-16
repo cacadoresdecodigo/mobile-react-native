@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View, Image, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
+import { Alert, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 
+import axios from "axios";
 import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
+import { setDataOnStorage } from "../../utiils/storage";
 
 export default function CadastrarTela() {
   const navigation = useNavigation();
@@ -13,16 +15,21 @@ export default function CadastrarTela() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  function cadastrar() {
-    console.log({ nome, cpf, email, senha });
-    if (nome === "" || cpf === "" || email === "" || senha === "") {
-      Alert.alert("Atenção", "Todos os campos são obrigatórios");
-    } else {
-      navigation.navigate("RetiradaTela");
+  async function cadastrar() {
+    try {
+      if (nome === "" || cpf === "" || email === "" || senha === "") {
+        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+      } else {
+        const response = await axios.post("http://localhost:3000/clientes", { nome, cpf, email, senha });        
+        await setDataOnStorage("usuario-logado", response.data)
+
+        navigation.navigate("RetiradaTela", );
+      }
+    } catch (error) {
+      console.error("Erro ao buscar dados do servidor:", error);
     }
-    //aqui deve chamar a API usando Axios para cadastrar os dados do usuario no banco de dados
-    //axios.post(http://URL.SITE.COM.BR/cadastrar, { nome, cpf, email, senha })
   }
+
   return (
     <View style={styles.container}>
       <Header />

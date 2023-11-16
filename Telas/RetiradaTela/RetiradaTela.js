@@ -1,12 +1,18 @@
 import React from "react";
-import { ScrollView, Text, TouchableOpacity, View, Switch } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import Header from "../Header/Header";
 import styles from "./RetiradaTelaStyle";
+import { getDataFromStorage } from "../../utiils/storage";
 
 export default function RetiradaTela() {
   const navigation = useNavigation();
+
+  async function teste() {
+    console.log("teste: ", await getDataFromStorage("usuario-logado"));
+  }
+
   return (
     <View style={styles.container}>
       <Header />
@@ -20,7 +26,8 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botaoSelect}
             title="FloripaShopping"
-            onPress={() => navigation.navigate("PlanoTela")}>
+            onPress={teste}
+          >
             <Text style={styles.textoSelect}>Clique</Text>
           </TouchableOpacity>
         </View>
@@ -30,7 +37,8 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botaoSelect}
             title="ShoppingBeiraMar"
-            onPress={() => navigation.navigate("PlanoTela")}>
+            onPress={() => navigation.navigate("PlanoTela")}
+          >
             <Text style={styles.textoSelect}>Clique</Text>
           </TouchableOpacity>
         </View>
@@ -40,7 +48,8 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botaoSelect}
             title="ShoppingItaguacu"
-            onPress={() => navigation.navigate("PlanoTela")}>
+            onPress={() => navigation.navigate("PlanoTela")}
+          >
             <Text style={styles.textoSelect}>Clique</Text>
           </TouchableOpacity>
         </View>
@@ -50,7 +59,8 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botaoSelect}
             title="ContinenteShopping"
-            onPress={() => navigation.navigate("PlanoTela")}>
+            onPress={() => navigation.navigate("PlanoTela")}
+          >
             <Text style={styles.textoSelect}>Clique</Text>
           </TouchableOpacity>
         </View>
