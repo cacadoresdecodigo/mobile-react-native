@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -9,9 +9,12 @@ import { getDataFromStorage } from "../../utiils/storage";
 export default function RetiradaTela() {
   const navigation = useNavigation();
 
-  async function teste() {
-    console.log("teste: ", await getDataFromStorage("usuario-logado"));
-  }
+  useEffect(() => {
+    async function teste() {
+      console.log("teste: ", await getDataFromStorage("usuario-logado"));
+    }
+    teste();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -25,7 +28,7 @@ export default function RetiradaTela() {
           <TouchableOpacity
             style={styles.botaoRetirada}
             title="FloripaShopping"
-            onPress={teste}
+            onPress={() => navigation.navigate("PlanoTela")}
           >
             <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
           </TouchableOpacity>

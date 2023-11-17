@@ -10,16 +10,22 @@ import axios from "axios";
 export default function EditarPerfilTela() {
   const navigation = useNavigation();
 
+  const [id, setId] = useState()
+
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  useEffect(async () => {
-    const usuarioLogado = await getDataFromStorage("usuario-logado");
-    setNome(usuarioLogado.nome);
-    setCpf(usuarioLogado.cpf);
-    setEmail(usuarioLogado.email);
+  useEffect(() => {
+    async function preencherUsuarioLogado() {
+      const usuarioLogado = await getDataFromStorage("usuario-logado");
+      setNome(usuarioLogado.nome);
+      setCpf(usuarioLogado.cpf);
+      setEmail(usuarioLogado.email);
+      setId(usuarioLogado.id);
+    }
+    preencherUsuarioLogado();
   }, []);
 
   async function salvarEdicao() {
@@ -27,13 +33,13 @@ export default function EditarPerfilTela() {
       if (nome === "" || cpf === "" || email === "" || senha === "") {
         Alert.alert("Atenção", "Todos os campos são obrigatórios");
       } else {
-        const response = await axios.put("http://localhost:3000/clientes", { nome, cpf, email, senha });
-        await setDataOnStorage(response.data)
+        const response = await axios.put("http://192.168.15.13:3000/clientes", { nome, cpf, email, senha, id });
+        await setDataOnStorage(response.data);
         Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
         navigation.goBack();
       }
     } catch (error) {
-      console.error("Erro ao buscar dados do servidor:", error);
+      console.error("Erro ao atualizar os dados do servidor:", error);
     }
   }
 
