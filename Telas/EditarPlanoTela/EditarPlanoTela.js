@@ -30,46 +30,61 @@ export default function EditarPlanoTela() {
   return (
     <View style={styles.container}>
       <Header />
-        <ScrollView>
+      <ScrollView>
         <View style={styles.viewConteudo}>
           <Text style={styles.textoH1}>INICIAR NOVO PLANO</Text>
 
           <View style={styles.divisor}></View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoPlano}>4 RETIRADAS/MÊS R$19,90</Text>
-            <TouchableOpacity style={styles.botaoSelect} title="RetiradaUm" onPress={atualizarDados}>
-              <Text style={styles.textoSelect}>Salvar</Text>
+            <TouchableOpacity
+              style={styles.botaoPlano}
+              title="RetiradaUm"
+              onPress={atualizarDados}
+            >
+              <Text style={styles.textoPlano}>4 RETIRADAS/MÊS R$19,90</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoPlano}>8 RETIRADAS/MÊS R$45,90</Text>
-            <TouchableOpacity style={styles.botaoSelect} title="RetiradaDois" onPress={atualizarDados}>
-              <Text style={styles.textoSelect}>Salvar</Text>
+            <TouchableOpacity
+              style={styles.botaoPlano}
+              title="RetiradaDois"
+              onPress={atualizarDados}
+            >
+              <Text style={styles.textoPlano}>8 RETIRADAS/MÊS R$45,90</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoPlano}>19 RETIRADAS/MÊS R$99,90</Text>
-            <TouchableOpacity style={styles.botaoSelect} title="RetiradaTres" onPress={atualizarDados}>
-              <Text style={styles.textoSelect}>Salvar</Text>
+            <TouchableOpacity
+              style={styles.botaoPlano}
+              title="RetiradaTres"
+              onPress={atualizarDados}
+            >
+              <Text style={styles.textoPlano}>19 RETIRADAS/MÊS R$99,90</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.ViewSwitch}>
-            <Text style={styles.textoPlano}>+20 RETIRADAS/MÊS R$159,90</Text>
-            <TouchableOpacity style={styles.botaoSelect} title="RetiradaQuatro" onPress={atualizarDados}>
-              <Text style={styles.textoSelect}>Salvar</Text>
+            <TouchableOpacity
+              style={styles.botaoPlano}
+              title="RetiradaQuatro"
+              onPress={atualizarDados}
+            >
+              <Text style={styles.textoPlano}>+20 RETIRADAS/MÊS R$159,90</Text>
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.botaoCancelar} title="Cancelar" onPress={cancelarPlano}>
+          <TouchableOpacity
+            style={styles.botaoCancelar}
+            title="Cancelar"
+            onPress={cancelarPlano}
+          >
             <Text style={styles.textoBotaoCancelar}>Cancelar Plano</Text>
           </TouchableOpacity>
-
         </View>
-        </ScrollView>
+      </ScrollView>
     </View>
   );
 }

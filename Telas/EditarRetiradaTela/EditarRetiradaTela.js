@@ -23,42 +23,42 @@ export default function EditarRetiradaTela() {
         <View style={styles.divisor}></View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="FloripaShopping"
-            onPress={atualizarDados}>
-            <Text style={styles.textoSelect}>Salvar</Text>
+            onPress={atualizarDados}
+          >
+            <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>SHOPPING BEIRAMAR</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ShoppingBeiraMar"
-            onPress={atualizarDados}>
-            <Text style={styles.textoSelect}>Salvar</Text>
+            onPress={atualizarDados}
+          >
+            <Text style={styles.textoRetirada}>SHOPPING BEIRAMAR</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>SHOPPING ITAGUAÇU</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ShoppingItaguacu"
-            onPress={atualizarDados}>
-            <Text style={styles.textoSelect}>Salvar</Text>
+            onPress={atualizarDados}
+          >
+            <Text style={styles.textoRetirada}>SHOPPING ITAGUAÇU</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>CONTINENTE SHOPPING</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ContinenteShopping"
-            onPress={atualizarDados}>
-            <Text style={styles.textoSelect}>Salvar</Text>
+            onPress={atualizarDados}
+          >
+            <Text style={styles.textoRetirada}>CONTINENTE SHOPPING</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -6,6 +6,7 @@ import axios from "axios";
 import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
 import { setDataOnStorage } from "../../utiils/storage";
+import RetiradaTela from "../RetiradaTela/RetiradaTela";
 
 export default function CadastrarTela() {
   const navigation = useNavigation();
@@ -15,20 +16,20 @@ export default function CadastrarTela() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  async function cadastrar() {
-    try {
-      if (nome === "" || cpf === "" || email === "" || senha === "") {
-        Alert.alert("Atenção", "Todos os campos são obrigatórios");
-      } else {
-        const response = await axios.post("http://localhost:3000/clientes", { nome, cpf, email, senha });        
-        await setDataOnStorage("usuario-logado", response.data)
+  // async function cadastrar() {
+  //  try {
+  //    if (nome === "" || cpf === "" || email === "" || senha === "") {
+  //       Alert.alert("Atenção", "Todos os campos são obrigatórios");
+  //     } else {
+  //       const response = await axios.post("http://localhost:3000/clientes", { nome, cpf, email, senha });        
+  //       await setDataOnStorage("usuario-logado", response.data)
 
-        navigation.navigate("RetiradaTela", );
-      }
-    } catch (error) {
-      console.error("Erro ao buscar dados do servidor:", error);
-    }
-  }
+  //       navigation.navigate("RetiradaTela", );
+  //     }
+  //   } catch (error) {
+  //     console.error("Erro ao buscar dados do servidor:", error);
+  //   }
+  // }
 
   return (
     <View style={styles.container}>
@@ -52,9 +53,9 @@ export default function CadastrarTela() {
           <Text style={styles.textoInput}>SENHA</Text>
           <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} />
 
-          <TouchableOpacity style={styles.botao} title="Entrar" onPress={cadastrar}>
+          { <TouchableOpacity style={styles.botao} title="Entrar" onPress={() =>navigation.navigate("RetiradaTela")}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> }
         </View>
       </ScrollView>
     </View>

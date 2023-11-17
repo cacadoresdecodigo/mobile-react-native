@@ -22,46 +22,42 @@ export default function RetiradaTela() {
         <View style={styles.divisor}></View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="FloripaShopping"
             onPress={teste}
           >
-            <Text style={styles.textoSelect}>Clique</Text>
+            <Text style={styles.textoRetirada}>FLORIPA SHOPPING</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>SHOPPING BEIRAMAR</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ShoppingBeiraMar"
             onPress={() => navigation.navigate("PlanoTela")}
           >
-            <Text style={styles.textoSelect}>Clique</Text>
+            <Text style={styles.textoRetirada}>SHOPPING BEIRAMAR</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>SHOPPING ITAGUAÇU</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ShoppingItaguacu"
             onPress={() => navigation.navigate("PlanoTela")}
           >
-            <Text style={styles.textoSelect}>Clique</Text>
+            <Text style={styles.textoRetirada}>SHOPPING ITAGUAÇU</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.ViewSwitch}>
-          <Text style={styles.textoRetirada}>CONTINENTE SHOPPING</Text>
           <TouchableOpacity
-            style={styles.botaoSelect}
+            style={styles.botaoRetirada}
             title="ContinenteShopping"
             onPress={() => navigation.navigate("PlanoTela")}
           >
-            <Text style={styles.textoSelect}>Clique</Text>
+            <Text style={styles.textoRetirada}>CONTINENTE SHOPPING</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -25,29 +25,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textoPlano: {
-    width: 185,
-    textAlign: "center",
-    backgroundColor: "#C0C0C0",
-    fontSize: 16,
-    margin: 10,
-    padding: 10,
-    borderRadius: 10,
-    color: "#2A5A63",
-    fontWeight: "600",
-  },
-  botaoSelect: {
-    width: 70,
+  botaoPlano: {
+    width: 320,
     borderWidth: 1,
     padding: 5,
+    marginTop: 10,
     borderRadius: 10,
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
   },
-  textoSelect: {
-    fontSize: 14,
+  textoPlano: {
+    fontSize: 16,
     textAlign: "center",
     color: "#2A5A63",
+    padding: 10,
+    fontWeight: "600",
   },
   divisor: {
     backgroundColor: "#FFCF48",
