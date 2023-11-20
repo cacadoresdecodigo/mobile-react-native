@@ -7,6 +7,7 @@ import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
 import { setDataOnStorage } from "../../utiils/storage";
 import RetiradaTela from "../RetiradaTela/RetiradaTela";
+import API_BASE_URL from "../../utiils/baseUrl";
 
 export default function CadastrarTela() {
   const navigation = useNavigation();
@@ -21,7 +22,7 @@ export default function CadastrarTela() {
      if (nome === "" || cpf === "" || email === "" || senha === "") {
         Alert.alert("Atenção", "Todos os campos são obrigatórios");
       } else {
-        const response = await axios.post("http://192.168.15.13:3000/clientes", { nome, cpf, email, senha });        
+        const response = await axios.post(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha });        
         await setDataOnStorage("usuario-logado", response.data)
 
         navigation.navigate("RetiradaTela");

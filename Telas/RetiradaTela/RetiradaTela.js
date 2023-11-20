@@ -6,17 +6,16 @@ import Header from "../Header/Header";
 import styles from "./RetiradaTelaStyle";
 import axios from "axios";
 import { getDataFromStorage } from "../../utiils/storage";
+import API_BASE_URL from "../../utiils/baseUrl";
 
 export default function RetiradaTela() {
   const navigation = useNavigation();
 
   const [locaisRetirada, setLocaisRetirada] = useState([]);
 
-  const [id, setId] = useState();
-
   useEffect(() => {
     async function buscarLocaisRetirada() {
-      const response = await axios.get("http://localhost:3000/local-retirada");
+      const response = await axios.get(`${API_BASE_URL}/local-retirada`);
       setLocaisRetirada(response.data);
     }
     buscarLocaisRetirada();
@@ -28,7 +27,7 @@ export default function RetiradaTela() {
 
       const usuarioLogado = await getDataFromStorage("usuario-logado");
 
-      const response = await axios.put("http://localhost:3000/clientes", {
+      const response = await axios.put(`${API_BASE_URL}/clientes`, {
         ...usuarioLogado,
         localRetiradaId: qualLocal.id,
       });

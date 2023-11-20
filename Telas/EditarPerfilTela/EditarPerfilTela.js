@@ -6,6 +6,7 @@ import Header from "../Header/Header.js";
 import styles from "./EditarPerfilTelaStyle.js";
 import { getDataFromStorage, setDataOnStorage } from "../../utiils/storage.js";
 import axios from "axios";
+import API_BASE_URL from "../../utiils/baseUrl.js";
 
 export default function EditarPerfilTela() {
   const navigation = useNavigation();
@@ -33,7 +34,7 @@ export default function EditarPerfilTela() {
       if (nome === "" || cpf === "" || email === "" || senha === "") {
         Alert.alert("Atenção", "Todos os campos são obrigatórios");
       } else {
-        const response = await axios.put("http://192.168.15.13:3000/clientes", { nome, cpf, email, senha, id });
+        const response = await axios.put(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha, id });
         await setDataOnStorage(response.data);
         Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
         navigation.goBack();
