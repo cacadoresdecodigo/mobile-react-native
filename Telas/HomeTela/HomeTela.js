@@ -20,6 +20,7 @@ export default function HomeTela() {
       <TouchableOpacity style={styles.botao} title="Cadastrar" onPress={() => navigation.navigate("CadastrarTela")}>
         <Text style={styles.textoBotao}>Cadastre-se</Text>
       </TouchableOpacity>
+
     </View>
   );
 }

@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",
+    paddingTop: 150,
   },
   textoH1: {
     fontSize: 26,
@@ -12,12 +13,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     padding: 16,
   },
-  ViewSwitch: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   viewConteudo: {
     marginTop: 14,
     display: "flex",
@@ -25,8 +20,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  ViewSwitch: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
-  botaoPlano: {
+  botaoRetirada: {
     width: 320,
     borderWidth: 1,
     padding: 5,
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
   },
-  textoPlano: {
+  textoRetirada: {
     fontSize: 16,
     textAlign: "center",
     color: "#2A5A63",

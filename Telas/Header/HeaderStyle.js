@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     width: 52,
     height: 55,
   },
+  botaoHome: {
+    borderWidth: 0.5,    
+  },
   viewLoginAtivo: {
     height: 48,
     width: "90%",

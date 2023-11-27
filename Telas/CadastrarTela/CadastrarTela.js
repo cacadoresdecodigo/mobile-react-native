@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import { Alert, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import axios from "axios";
+import API_BASE_URL from "../../utiils/baseUrl";
+import { setDataOnStorage } from "../../utiils/storage";
 import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
-import { setDataOnStorage } from "../../utiils/storage";
-import RetiradaTela from "../RetiradaTela/RetiradaTela";
-import API_BASE_URL from "../../utiils/baseUrl";
 
 export default function CadastrarTela() {
   const navigation = useNavigation();

@@ -18,7 +18,6 @@ import EditarPlanoTela from "./Telas/EditarPlanoTela/EditarPlanoTela";
 import EditarPagamentoTela from "./Telas/EditarPagamentoTela/EditarPagamentoTela";
 import EditarRetiradaTela from "./Telas/EditarRetiradaTela/EditarRetiradaTela";
 
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -29,21 +28,41 @@ export default function App() {
           name="HomeTela"
           component={HomeTela}
           options={{
-            title: "Home",
+            title: "Home", headerShown: false
           }}
         />
-        <Stack.Screen name="LoginTela" component={LoginTela} options={{ title: "Login" }} />
-        <Stack.Screen name="CadastrarTela" component={CadastrarTela} options={{ title: "Cadastrar" }} />
-        <Stack.Screen name="RetiradaTela" component={RetiradaTela} options={{ title: "Local de Retirada" }} />
-        <Stack.Screen name="PlanoTela" component={PlanoTela} options={{ title: "Planos" }} />
-        <Stack.Screen name="PagamentoTela" component={PagamentoTela} options={{ title: "Pagamento" }} />
-        <Stack.Screen name="MenuTela" component={MenuTela} options={{ title: "Menu" }} />
-        <Stack.Screen name="HistoricoEntregaTela" component={HistoricoEntregaTela} options={{ title: "Histórico Entrega" }} />
-        <Stack.Screen name="HistoricoPagamentoTela" component={HistoricoPagamentoTela} options={{ title: "Histórico Pagamento" }} />
-        <Stack.Screen name="EditarPerfilTela" component={EditarPerfilTela} options={{ title: "Editar Perfil" }} />
-        <Stack.Screen name="EditarPlanoTela" component={EditarPlanoTela} options={{title: "Editar Plano"}} />
-        <Stack.Screen name="EditarPagamentoTela" component={EditarPagamentoTela} options={{title: "Editar Pagamento"}} />
-      <Stack.Screen name="EditarRetiradaTela" component={EditarRetiradaTela} options={{title: "Editar Retirada"}} />
+        <Stack.Screen name="LoginTela" component={LoginTela} options={{ title: "Login", headerShown: false}} />
+        <Stack.Screen
+          name="CadastrarTela"
+          component={CadastrarTela}
+          options={{ title: "Cadastrar", headerShown: false }}
+        />
+        <Stack.Screen
+          name="RetiradaTela"
+          component={RetiradaTela}
+          options={{ title: "Local de Retirada", headerShown: false}}
+        />
+        <Stack.Screen name="PlanoTela" component={PlanoTela} options={{ title: "Planos" , headerShown: false}} />
+        <Stack.Screen name="PagamentoTela" component={PagamentoTela} options={{ title: "Pagamento", headerShown: false}} />
+        <Stack.Screen name="MenuTela" component={MenuTela} options={{ title: "Menu", headerShown: false }} />
+        <Stack.Screen
+          name="HistoricoEntregaTela"
+          component={HistoricoEntregaTela}
+          options={{ title: "Histórico Entrega", headerShown: false }}
+        />
+        <Stack.Screen
+          name="HistoricoPagamentoTela"
+          component={HistoricoPagamentoTela}
+          options={{ title: "Histórico Pagamento", headerShown: false }}
+        />
+        <Stack.Screen name="EditarPerfilTela" component={EditarPerfilTela} options={{ title: "Editar Perfil", headerShown: false }} />
+        <Stack.Screen name="EditarPlanoTela" component={EditarPlanoTela} options={{ title: "Editar Plano", headerShown: false }} />
+        <Stack.Screen
+          name="EditarPagamentoTela"
+          component={EditarPagamentoTela}
+          options={{ title: "Editar Pagamento", headerShown: false }}
+        />
+        <Stack.Screen name="EditarRetiradaTela" component={EditarRetiradaTela} options={{ title: "Editar Retirada", headerShown: false }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

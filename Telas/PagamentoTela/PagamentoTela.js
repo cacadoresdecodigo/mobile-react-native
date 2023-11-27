@@ -1,39 +1,93 @@
-import React from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
+import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 
+import axios from "axios";
+import API_BASE_URL from "../../utiils/baseUrl";
+import { setDataOnStorage } from "../../utiils/storage";
 import Header from "../Header/Header";
 import styles from "./PagamentoTelaStyle";
 
 export default function PagamentoTela() {
   const navigation = useNavigation();
+
+  const [numeroCartao, setNumeroCartao] = useState("");
+  const [nomeCartao, setNomeCartao] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [validade, setValidade] = useState("");
+  const [cvv, setCvv] = useState("");
+
+  async function cadastrar() {
+    try {
+      if (numeroCartao === "" || nomeCartao === "" || cpf === "" || validade === "" || cvv === "") {
+        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+      } else {
+        const response = await axios.post(`${API_BASE_URL}/pagamento`, {
+          numeroCartao,
+          nomeCartao,
+          cpf,
+          validade,
+          cvv,
+        });
+
+        navigation.navigate("MenuTela");
+      }
+    } catch (error) {
+      console.error("Erro ao cadastrar os dados do servidor:", error);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView>
+      <ScrollView automaticallyAdjustKeyboardInsets>
         <View style={styles.viewConteudo}>
           <Text style={styles.textoH1}>CADASTRE SEU CARTÃO PARA PAGAMENTO</Text>
 
           <View style={styles.divisor}></View>
 
-          {/* <Text style={styles.textoInput}>NUMERO DO CARTÃO</Text> */}
-          <TextInput style={styles.inputs} placeholder="NUMERO DO CARTÃO"/>
+          <TextInput
+            style={styles.inputs}
+            value={numeroCartao}
+            onChangeText={setNumeroCartao}
+            keyboardType="numeric"
+            placeholder="NUMERO DO CARTÃO"
+          />
 
-          {/* <Text style={styles.textoInput}>NOME IMPRESSO NO CARTÃO</Text> */}
-          <TextInput style={styles.inputs} placeholder="NOME IMPRESSO NO CARTÃO"/>
+          <TextInput
+            style={styles.inputs}
+            value={nomeCartao}
+            onChangeText={setNomeCartao}
+            placeholder="NOME IMPRESSO NO CARTÃO"
+          />
 
-          {/* <Text style={styles.textoInput}>CPF DO TITULAR</Text> */}
-          <TextInput style={styles.inputs} placeholder="CPF DO TITULAR" />
+          <TextInput
+            style={styles.inputs}
+            value={cpf}
+            onChangeText={setCpf}
+            keyboardType="numeric"
+            placeholder="CPF DO TITULAR"
+          />
 
           <View style={styles.ViewPagamento}>
-            {/* <Text style={styles.textoInputPagamento}>VALIDADE</Text> */}
-            <TextInput style={styles.inputsPagamento} placeholder="VALIDADE"/>
+            <TextInput
+              style={styles.inputsPagamento}
+              value={validade}
+              onChangeText={setValidade}
+              keyboardType="numeric"
+              placeholder="VALIDADE"
+            />
 
-            {/* <Text style={styles.textoInputPagamento}>CVV</Text> */}
-            <TextInput style={styles.inputsPagamento} placeholder="CVV"/>
+            <TextInput
+              style={styles.inputsPagamento}
+              value={cvv}
+              onChangeText={setCvv}
+              keyboardType="numeric"
+              placeholder="CVV"
+            />
           </View>
 
-          <TouchableOpacity style={styles.botao} title="Pagamento" onPress={() => navigation.navigate("MenuTela")}>
+          <TouchableOpacity style={styles.botao} onPress={cadastrar}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
           </TouchableOpacity>
         </View>

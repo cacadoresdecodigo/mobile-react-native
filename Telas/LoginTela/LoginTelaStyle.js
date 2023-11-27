@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",   
     paddingTop: 45,
+    paddingTop: 150,
   },
   viewImagem: {
     justifyContent: "center",
