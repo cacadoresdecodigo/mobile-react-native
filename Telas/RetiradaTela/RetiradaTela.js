@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import Header from "../Header/Header";
 import styles from "./RetiradaTelaStyle";
 import axios from "axios";
-import { getDataFromStorage } from "../../utiils/storage";
+import { getDataFromStorage, setDataOnStorage } from "../../utiils/storage";
 import API_BASE_URL from "../../utiils/baseUrl";
 
 export default function RetiradaTela() {
@@ -21,16 +21,19 @@ export default function RetiradaTela() {
     buscarLocaisRetirada();
   }, []);
 
-  async function selecionarLocalRetirada(qualLocal) {
+  async function selecionarLocalRetirada(localSelecionado) {
     try {
-      console.log(qualLocal);
+      console.log(localSelecionado);
 
       const usuarioLogado = await getDataFromStorage("usuario-logado");
 
-      const response = await axios.put(`${API_BASE_URL}/clientes`, {
+      const usuarioLogadoComLocalRetirada = {
         ...usuarioLogado,
-        localRetiradaId: qualLocal.id,
-      });
+        localRetiradaId: localSelecionado.id,
+      };
+
+      const response = await axios.put(`${API_BASE_URL}/clientes`, usuarioLogadoComLocalRetirada);
+      await setDataOnStorage("usuario-logado", response.data);
 
       navigation.navigate("PlanoTela");
     } catch (error) {

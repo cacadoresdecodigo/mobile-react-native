@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Image, View, Text, Button } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import styles from "./HeaderStyle";
-import { getDataFromStorage } from "../../utiils/storage";
-import { TouchableOpacity } from "react-native-web";
 import { useNavigation } from "@react-navigation/native";
+import { getDataFromStorage } from "../../utiils/storage";
+import styles from "./HeaderStyle";
 
 export default function Header() {
   const navigation = useNavigation();
@@ -12,20 +11,26 @@ export default function Header() {
 
   useEffect(() => {
     async function usuarioLogado() {
-      setUsuarioLogado(await getDataFromStorage("usuario-logado"));
+      const usuarioLogado = await getDataFromStorage("usuario-logado");
+      if (usuarioLogado) {
+        setUsuarioLogado(usuarioLogado);
+      } else {
+        navigation.navigate("LoginTela");
+      }
     }
     usuarioLogado();
   }, []);
 
   return (
     <View style={styles.viewHeader}>
-      <Image style={styles.imagem} source={require("../../assets/favicon3.png")} />
+      <TouchableOpacity onPress={() => navigation.navigate("MenuTela")}>
+        <Image style={styles.imagem} source={require("../../assets/favicon3.png")} />
+      </TouchableOpacity>
 
       <View style={styles.viewLoginAtivo}>
         <Image style={styles.imagemLoginAtivo} source={require("../../assets/5-removebg-preview.png")} />
         <Image style={styles.imagemLoginAtivo} source={require("../../assets/6-removebg-preview.png")} />
-        <Text>{usuarioLogado && usuarioLogado.nome}</Text>
-
+        <Text style={styles.textoLoginAtivo}>Olá, {usuarioLogado && usuarioLogado.nome}</Text>
         <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
       </View>
     </View>

@@ -70,6 +70,20 @@ const styles = StyleSheet.create({
     height: 6,
     marginTop: -15,
   },
+  botaoVoltar: {
+    width: 320,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#2A5A63",
+    borderColor: "#2A5A63",
+    marginTop: 12,
+  },
+  textoBotaoVoltar: {
+    fontSize: 22,
+    textAlign: "center",
+    color: "#e3e3e3",
+  },
 });
 
 export default styles;

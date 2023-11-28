@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import Header from "../Header/Header";
 import styles from "./PlanoTelaStyle";
 import axios from "axios";
-import { getDataFromStorage } from "../../utiils/storage";
+import { getDataFromStorage, setDataOnStorage } from "../../utiils/storage";
 import API_BASE_URL from "../../utiils/baseUrl";
 
 export default function RetiradaTela() {
@@ -21,16 +21,19 @@ export default function RetiradaTela() {
     buscarPlano();
   }, []);
 
-  async function selecionarPlano(quaisPlanos) {
+  async function selecionarPlano(planoSelecionado) {
     try {
-      console.log(quaisPlanos);
+      console.log(planoSelecionado);
 
       const usuarioLogado = await getDataFromStorage("usuario-logado");
 
-      const response = await axios.put(`${API_BASE_URL}/clientes`, {
+      const usuarioLogadoComPlano = {
         ...usuarioLogado,
-        planoId: quaisPlanos.id,
-      });
+        planoId: planoSelecionado.id,
+      };
+
+      const response = await axios.put(`${API_BASE_URL}/clientes`, usuarioLogadoComPlano);
+      await setDataOnStorage("usuario-logado", response.data);
 
       navigation.navigate("PagamentoTela");
     } catch (error) {
@@ -49,7 +52,9 @@ export default function RetiradaTela() {
         {planos.map((plano) => (
           <View style={styles.ViewSwitch} key={plano.id}>
             <TouchableOpacity style={styles.botaoRetirada} onPress={() => selecionarPlano(plano)}>
-              <Text style={styles.textoRetirada}>{plano.nome} R${plano.valor}</Text>
+              <Text style={styles.textoRetirada}>
+                {plano.nome} R${plano.valor}
+              </Text>
             </TouchableOpacity>
           </View>
         ))}

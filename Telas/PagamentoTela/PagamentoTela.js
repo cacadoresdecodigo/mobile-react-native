@@ -4,7 +4,7 @@ import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "reac
 
 import axios from "axios";
 import API_BASE_URL from "../../utiils/baseUrl";
-import { setDataOnStorage } from "../../utiils/storage";
+import { getDataFromStorage, setDataOnStorage } from "../../utiils/storage";
 import Header from "../Header/Header";
 import styles from "./PagamentoTelaStyle";
 
@@ -22,13 +22,24 @@ export default function PagamentoTela() {
       if (numeroCartao === "" || nomeCartao === "" || cpf === "" || validade === "" || cvv === "") {
         Alert.alert("Atenção", "Todos os campos são obrigatórios");
       } else {
-        const response = await axios.post(`${API_BASE_URL}/pagamento`, {
+        const usuarioLogado = await getDataFromStorage("usuario-logado");
+
+        const dadosCartao = {
           numeroCartao,
           nomeCartao,
           cpf,
           validade,
           cvv,
-        });
+        };
+
+        const responsePagamento = await axios.post(`${API_BASE_URL}/pagamento`, dadosCartao);
+
+        const usuarioLogadoComPagamento = {
+          ...usuarioLogado,
+          pagamentoId: responsePagamento.data.id,
+        };
+        const responseCliente = await axios.put(`${API_BASE_URL}/clientes`, usuarioLogadoComPagamento);
+        await setDataOnStorage("usuario-logado", responseCliente.data);
 
         navigation.navigate("MenuTela");
       }

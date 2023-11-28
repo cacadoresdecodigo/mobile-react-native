@@ -3,6 +3,10 @@ import { Image, Text, View, TextInput, TouchableOpacity, ScrollView, Alert } fro
 
 import { useNavigation } from "@react-navigation/native";
 import styles from "./LoginTelaStyle";
+import axios from "axios";
+import { setDataOnStorage } from "../../utiils/storage";
+import API_BASE_URL from "../../utiils/baseUrl";
+
 
 export default function LoginTela() {
   const navigation = useNavigation();
@@ -10,13 +14,14 @@ export default function LoginTela() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  function logar() {
-    console.log({ email, senha });
-    // Quando conectar com o banco deve buscar o email e admin do banco e fazer a validação
-    if (email !== "admin" && senha !== 123) {
-      Alert.alert("Atenção", "Usuário ou senha inválido");
-    } else {
+  async function logar() {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/logar`, { email, senha });
+      await setDataOnStorage("usuario-logado", response.data);
       navigation.navigate("MenuTela");
+    } catch(error) {
+      console.log(error);
+      alert("Atenção", "Usuário ou senha inválido");
     }
   }
   return (
@@ -35,10 +40,14 @@ export default function LoginTela() {
           <TextInput style={styles.inputs} value={email} onChangeText={setEmail} />
 
           <Text style={styles.textoInput}>SENHA</Text>
-          <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} />
+          <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} secureTextEntry={true} />
 
           <TouchableOpacity style={styles.botao} title="Entrar" onPress={logar}>
             <Text style={styles.textoBotao}>Entrar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoVoltar} title="Voltar" onPress={() => navigation.navigate("HomeTela")}>
+            <Text style={styles.textoBotaoVoltar}>Voltar</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

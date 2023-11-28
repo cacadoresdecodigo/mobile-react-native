@@ -37,7 +37,7 @@ export default function EditarPerfilTela() {
         const response = await axios.put(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha, id });
         await setDataOnStorage(response.data);
         Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
-        navigation.goBack();
+        navigation.navigate("MenuTela")
       }
     } catch (error) {
       console.error("Erro ao atualizar os dados do servidor:", error);

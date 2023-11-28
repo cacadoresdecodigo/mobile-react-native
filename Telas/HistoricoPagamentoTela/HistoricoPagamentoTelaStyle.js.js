@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",
-    paddingTop: 150,
+    paddingTop: 50,
   },
   textoH1: {
     fontSize: 26,
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     height: 6,
     marginTop: -42,
   },
-  ViewCard: {    
+  ViewCard: {
     borderRadius: 10,
     borderColor: "#2A5A63",
     justifyContent: "center",
     alignItems: "center",
-    padding: 8, 
+    padding: 8,
     backgroundColor: "#C0C0C0",
     gap: 2,
   },
@@ -42,7 +42,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#2A5A63",
     fontWeight: "600",
-    
+  },
+  botao: {
+    width: 320,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#FFCF48",
+    borderColor: "#2A5A63",
+    marginTop: 16,
+  },
+  textoBotao: {
+    fontSize: 22,
+    textAlign: "center",
+    color: "#2A5A63",
+  },
+  voltar: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: 50,
   },
 });
 

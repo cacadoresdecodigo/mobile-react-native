@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",
-    paddingTop: 80,
+    paddingTop: 50,
   },
   textoH1: {
     fontSize: 26,
@@ -67,6 +67,20 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     padding: 10,
     borderRadius: 50,
+  },
+  botaoVoltar: {
+    width: 320,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#2A5A63",
+    borderColor: "#2A5A63",
+    marginTop: 12,
+  },
+  textoBotaoVoltar: {
+    fontSize: 22,
+    textAlign: "center",
+    color: "#e3e3e3",
   },
 
 });

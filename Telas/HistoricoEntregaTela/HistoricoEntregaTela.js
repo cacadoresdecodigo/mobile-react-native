@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 
 import Header from "../Header/Header";
 import styles from "./HistoricoEntregaTelaStyle";
@@ -18,9 +18,13 @@ export default function HistoricoEntregaTela() {
 
           <Card name={"Entregue"}></Card>
           <Card name={"Cancelado"}></Card>
-          
         </View>
       </ScrollView>
+      <View style={styles.voltar}>
+        <TouchableOpacity style={styles.botao} title="Voltar" onPress={() => navigation.navigate("MenuTela")}>
+          <Text style={styles.textoBotao}>Voltar</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

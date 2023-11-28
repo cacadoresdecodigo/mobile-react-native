@@ -17,12 +17,12 @@ export default function CadastrarTela() {
   const [senha, setSenha] = useState("");
 
   async function cadastrar() {
-   try {
-     if (nome === "" || cpf === "" || email === "" || senha === "") {
+    try {
+      if (nome === "" || cpf === "" || email === "" || senha === "") {
         Alert.alert("Atenção", "Todos os campos são obrigatórios");
       } else {
-        const response = await axios.post(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha });        
-        await setDataOnStorage("usuario-logado", response.data)
+        const response = await axios.post(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha });
+        await setDataOnStorage("usuario-logado", response.data);
 
         navigation.navigate("RetiradaTela");
       }
@@ -33,7 +33,6 @@ export default function CadastrarTela() {
 
   return (
     <View style={styles.container}>
-      <Header />
       <ScrollView automaticallyAdjustKeyboardInsets>
         <View style={styles.viewConteudo}>
           <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
@@ -53,9 +52,13 @@ export default function CadastrarTela() {
           <Text style={styles.textoInput}>SENHA</Text>
           <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} />
 
-          { <TouchableOpacity style={styles.botao} title="Entrar" onPress={cadastrar}>
+          <TouchableOpacity style={styles.botao} title="Entrar" onPress={cadastrar}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
-          </TouchableOpacity> }
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.botaoVoltar} title="Voltar" onPress={() => navigation.navigate("HomeTela")}>
+            <Text style={styles.textoBotaoVoltar}>Voltar</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
