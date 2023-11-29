@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",
-    paddingTop: 80,
+    paddingTop: 50,
   },
   textoH1: {
     fontSize: 26,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 24,
+    paddingTop: 20,
     gap: 5,
   },
   botao: {

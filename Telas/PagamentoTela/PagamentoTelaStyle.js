@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 24,
     gap: 30,
+    marginTop: 20,
   },
   inputs: {
     borderWidth: 1.5,
@@ -28,6 +29,8 @@ const styles = StyleSheet.create({
     height: 40,
     paddingLeft: 8,
     color: "#2A5A63",
+    fontWeight: "600",
+    fontSize: 16,
   },
   botao: {
     width: 320,
@@ -66,7 +69,9 @@ const styles = StyleSheet.create({
     width: 150,
     height: 40,
     paddingLeft: 8,
-    color: "#2A5A63",
+    color: "#2A5A63",    
+    fontWeight: "600",
+    fontSize: 16,
   },
 });
 

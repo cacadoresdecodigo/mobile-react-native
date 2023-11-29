@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 24,
+    paddingTop: 30,
     paddingBottom: 24,
   },
   textoInput: {

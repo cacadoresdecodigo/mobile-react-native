@@ -4,8 +4,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#e3e3e3",   
-    paddingTop: 45,
-    paddingTop: 150,
+    paddingTop: 100,
+    
   },
   viewImagem: {
     justifyContent: "center",
@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     
   },
   imagem: {
-    width: 275,
-    height: 90,
+    width: 295,
+    height: 110,
   },
   textoH1: {
     fontSize: 26,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   textoInput: {
-    fontSize: 16,
+    fontSize: 18,
     paddingTop: 30,
     paddingBottom: 4,
     color: "#2A5A63",
@@ -43,9 +43,10 @@ const styles = StyleSheet.create({
     borderColor: "#2A5A63",
     width: 320,
     height: 40,
-    padding: 4,
-    fontSize: 16,
+    padding: 6,
+    fontSize: 18,
     color: "#2A5A63",
+    fontWeight: "600",
   },
   botao: {
     width: 320,

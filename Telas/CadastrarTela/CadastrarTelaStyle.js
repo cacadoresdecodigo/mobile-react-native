@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   textoInput: {
-    fontSize: 16,
-    paddingTop: 30,
+    fontSize: 18,
+    paddingTop: 25,
     paddingBottom: 4,
     color: "#2A5A63",
     fontWeight: "600",
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     width: 320,
     height: 40,
     padding: 4,
-    fontSize: 16,
+    fontWeight: "600",
+    fontSize: 18,
     color: "#2A5A63",
   },
   botao: {

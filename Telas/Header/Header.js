@@ -5,6 +5,13 @@ import { useNavigation } from "@react-navigation/native";
 import { getDataFromStorage } from "../../utiils/storage";
 import styles from "./HeaderStyle";
 
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const RANDOM_AVATAR = randomNumber(1,3)
+
 export default function Header() {
   const navigation = useNavigation();
   const [usuarioLogado, setUsuarioLogado] = useState();
@@ -21,6 +28,7 @@ export default function Header() {
     usuarioLogado();
   }, []);
 
+
   return (
     <View style={styles.viewHeader}>
       <TouchableOpacity onPress={() => navigation.navigate("MenuTela")}>
@@ -28,10 +36,11 @@ export default function Header() {
       </TouchableOpacity>
 
       <View style={styles.viewLoginAtivo}>
-        <Image style={styles.imagemLoginAtivo} source={require("../../assets/5-removebg-preview.png")} />
-        <Image style={styles.imagemLoginAtivo} source={require("../../assets/6-removebg-preview.png")} />
+        {/* <Image style={styles.imagemLoginAtivo} source={require("../../assets/5-removebg-preview.png")} />
+        <Image style={styles.imagemLoginAtivo} source={require("../../assets/6-removebg-preview.png")} /> */}
         <Text style={styles.textoLoginAtivo}>Olá, {usuarioLogado && usuarioLogado.nome}</Text>
-        <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
+
+        <Image style={styles.fotoAvatar} source={require(`../../assets/avatar${RANDOM_AVATAR}.png`)} />
       </View>
     </View>
   );

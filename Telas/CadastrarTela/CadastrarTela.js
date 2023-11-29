@@ -1,15 +1,21 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Alert, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import axios from "axios";
 import API_BASE_URL from "../../utiils/baseUrl";
 import { setDataOnStorage } from "../../utiils/storage";
-import Header from "../Header/Header";
 import styles from "./CadastrarTelaStyle";
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const RANDOM_AVATAR = randomNumber(1,3)
 
 export default function CadastrarTela() {
   const navigation = useNavigation();
+ 
 
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -19,7 +25,7 @@ export default function CadastrarTela() {
   async function cadastrar() {
     try {
       if (nome === "" || cpf === "" || email === "" || senha === "") {
-        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+        alert("Todos os campos são obrigatórios");
       } else {
         const response = await axios.post(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha });
         await setDataOnStorage("usuario-logado", response.data);
@@ -33,9 +39,10 @@ export default function CadastrarTela() {
 
   return (
     <View style={styles.container}>
-      <ScrollView automaticallyAdjustKeyboardInsets>
+      <ScrollView>
         <View style={styles.viewConteudo}>
-          <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
+          <Image style={styles.fotoAvatar} source={require(`../../assets/avatar${RANDOM_AVATAR}.png`)} />
+
           <Text style={styles.textoH1}>CRIE SUA CONTA</Text>
 
           <View style={styles.divisor}></View>

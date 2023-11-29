@@ -1,90 +1,65 @@
-import React from "react";
-import { ScrollView, Text, TouchableOpacity, View, Alert } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import Header from "../Header/Header";
+
+import axios from "axios";
+import API_BASE_URL from "../../utiils/baseUrl";
+import { getDataFromStorage, setDataOnStorage } from "../../utiils/storage";
 import styles from "./EditarPlanoTelaStyle";
 
 export default function EditarPlanoTela() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
-  function atualizarDados() {
-      Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
-      navigation.goBack();
-  }
+  const [planos, setPlanos] = useState([]);
 
-   function cancelarPlano() {
-    Alert.alert("Confirmação", "Tem certeza de que deseja cancelar o plano?", [
-        {
-          text: "Sim", 
-          onPress: () => {Alert.alert("Plano Cancelado", "O plano foi cancelado com sucesso!");
-          navigation.navigate("HomeTela");
-        },
-      },
-        {
-          text: 'Não', 
-          onPress: () => console.log('OK Pressed')
-        },
-      ]);
+  useEffect(() => {
+    async function buscarPlano() {
+      const response = await axios.get(`${API_BASE_URL}/plano`);
+      setPlanos(response.data);
+    }
+    buscarPlano();
+  }, []);
+
+  async function selecionarPlano(planoSelecionado) {
+    try {
+      console.log(planoSelecionado);
+
+      const usuarioLogado = await getDataFromStorage("usuario-logado");
+
+      const usuarioLogadoComPlano = {
+        ...usuarioLogado,
+        planoId: planoSelecionado.id,
+      };
+
+      const response = await axios.put(`${API_BASE_URL}/clientes`, usuarioLogadoComPlano);
+      await setDataOnStorage("usuario-logado", response.data);
+
+      navigation.navigate("MenuTela");
+    } catch (error) {
+      console.error("Erro ao cadastrar os dados do servidor:", error);
+    }
   }
 
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView>
-        <View style={styles.viewConteudo}>
-          <Text style={styles.textoH1}>INICIAR NOVO PLANO</Text>
+      <View style={styles.viewConteudo}>
+        <Text style={styles.textoH1}>ESCOLHA SEU PLANO</Text>
 
-          <View style={styles.divisor}></View>
+        <View style={styles.divisor}></View>
 
-          <View style={styles.ViewSwitch}>
-            <TouchableOpacity
-              style={styles.botaoPlano}
-              title="RetiradaUm"
-              onPress={atualizarDados}
-            >
-              <Text style={styles.textoPlano}>4 RETIRADAS/MÊS R$19,90</Text>
+        {planos.map((plano) => (
+          <View style={styles.ViewSwitch} key={plano.id}>
+            <TouchableOpacity style={styles.botaoRetirada} onPress={() => selecionarPlano(plano)}>
+              <Text style={styles.textoRetirada}>
+                {plano.nome} R${plano.valor}
+              </Text>
             </TouchableOpacity>
           </View>
-
-          <View style={styles.ViewSwitch}>
-            <TouchableOpacity
-              style={styles.botaoPlano}
-              title="RetiradaDois"
-              onPress={atualizarDados}
-            >
-              <Text style={styles.textoPlano}>8 RETIRADAS/MÊS R$45,90</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.ViewSwitch}>
-            <TouchableOpacity
-              style={styles.botaoPlano}
-              title="RetiradaTres"
-              onPress={atualizarDados}
-            >
-              <Text style={styles.textoPlano}>19 RETIRADAS/MÊS R$99,90</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.ViewSwitch}>
-            <TouchableOpacity
-              style={styles.botaoPlano}
-              title="RetiradaQuatro"
-              onPress={atualizarDados}
-            >
-              <Text style={styles.textoPlano}>+20 RETIRADAS/MÊS R$159,90</Text>
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity
-            style={styles.botaoCancelar}
-            title="Cancelar"
-            onPress={cancelarPlano}
-          >
-            <Text style={styles.textoBotaoCancelar}>Cancelar Plano</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+        ))}
+      </View>
     </View>
   );
 }

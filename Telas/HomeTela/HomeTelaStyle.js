@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",
     padding: 16,
-    paddingTop: 200,
+    paddingTop: 170,
   },
   viewImagem: {
     justifyContent: "center",
@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
   },
   imagem: {
-    width: 350,
-    height: 120,
+    width: 360,
+    height: 130,
   },
   botao: {
     borderWidth: 1,

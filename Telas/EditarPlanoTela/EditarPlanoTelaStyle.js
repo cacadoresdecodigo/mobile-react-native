@@ -13,20 +13,21 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     padding: 16,
   },
+  viewConteudo: {
+    marginTop: 20,
+    display: "flex",
+    paddingTop: 24,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   ViewSwitch: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  viewConteudo: {
-    marginTop: 14,
-    display: "flex",
-    paddingTop: 24,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  botaoPlano: {
+
+  botaoRetirada: {
     width: 320,
     borderWidth: 1,
     padding: 5,
@@ -35,8 +36,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCF48",
     borderColor: "#2A5A63",
   },
-  textoPlano: {
-    fontSize: 16,
+  textoRetirada: {
+    fontSize: 20,
     textAlign: "center",
     color: "#2A5A63",
     padding: 10,
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   botaoCancelar: {
-    width: 265,
+    width: 320,
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,

@@ -32,11 +32,11 @@ export default function EditarPerfilTela() {
   async function salvarEdicao() {
     try {
       if (nome === "" || cpf === "" || email === "" || senha === "") {
-        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+        alert("Atenção! Todos os campos são obrigatórios");
       } else {
         const response = await axios.put(`${API_BASE_URL}/clientes`, { nome, cpf, email, senha, id });
         await setDataOnStorage(response.data);
-        Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
+        alert("Atualização Concluída! As alterações no seu cadastro foram salvas com sucesso!");
         navigation.navigate("MenuTela")
       }
     } catch (error) {
@@ -49,7 +49,7 @@ export default function EditarPerfilTela() {
       <Header />
       <ScrollView automaticallyAdjustKeyboardInsets>
         <View style={styles.viewConteudo}>
-          <Image style={styles.fotoAvatar} src={"https://i.pravatar.cc/300"} />
+          
           <Text style={styles.textoH1}>EDITAR PERFIL</Text>
 
           <View style={styles.divisor}></View>

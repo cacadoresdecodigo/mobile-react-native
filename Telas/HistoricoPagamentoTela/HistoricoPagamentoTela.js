@@ -20,11 +20,6 @@ export default function HistoricoPagamentoTela() {
           <Card name={"Pago"}></Card>
         </View>
       </ScrollView>
-      <View style={styles.voltar}>
-        <TouchableOpacity style={styles.botao} title="Voltar" onPress={() => navigation.navigate("MenuTela")}>
-          <Text style={styles.textoBotao}>Voltar</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }

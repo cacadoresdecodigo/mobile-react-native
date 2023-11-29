@@ -21,7 +21,7 @@ export default function LoginTela() {
       navigation.navigate("MenuTela");
     } catch(error) {
       console.log(error);
-      alert("Atenção", "Usuário ou senha inválido");
+      alert("Atenção! Usuário ou senha inválido");
     }
   }
   return (

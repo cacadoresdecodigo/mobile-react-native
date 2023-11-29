@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   viewConteudo: {
-    marginTop: 14,
+    marginTop: 20,
     display: "flex",
     paddingTop: 24,
     justifyContent: "center",
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     borderColor: "#2A5A63",
   },
   textoRetirada: {
-    fontSize: 16,
+    fontSize: 20,
     textAlign: "center",
     color: "#2A5A63",
     padding: 10,

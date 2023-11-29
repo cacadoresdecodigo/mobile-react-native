@@ -20,7 +20,7 @@ export default function PagamentoTela() {
   async function cadastrar() {
     try {
       if (numeroCartao === "" || nomeCartao === "" || cpf === "" || validade === "" || cvv === "") {
-        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+        alert("Atenção! Todos os campos são obrigatórios");
       } else {
         const usuarioLogado = await getDataFromStorage("usuario-logado");
 

@@ -35,11 +35,11 @@ export default function EditarPagamentoTela() {
   async function EditarPagamento() {
     try {
       if (numeroCartao === "" || nomeCartao === "" || cpf === "" || validade === "" || cvv === "") {
-        Alert.alert("Atenção", "Todos os campos são obrigatórios");
+        alert("Todos os campos são obrigatórios");
       } else {
         const response = await axios.put(`${API_BASE_URL}/pagamento`, { numeroCartao, nomeCartao, cpf, validade, cvv, id });
         await setDataOnStorage(response.data);
-        Alert.alert("Atualização Concluída", "As alterações no seu cadastro foram salvas com sucesso!");
+        alert("Atualização Concluída! As alterações no seu cadastro foram salvas com sucesso!");
         navigation.navigate("MenuTela");
       }
     } catch (error) {
