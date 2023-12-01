@@ -35,9 +35,8 @@ export default function Header() {
         <Image style={styles.imagem} source={require("../../assets/favicon3.png")} />
       </TouchableOpacity>
 
-      <View style={styles.viewLoginAtivo}>
-        {/* <Image style={styles.imagemLoginAtivo} source={require("../../assets/5-removebg-preview.png")} />
-        <Image style={styles.imagemLoginAtivo} source={require("../../assets/6-removebg-preview.png")} /> */}
+      <View style={styles.viewLoginAtivo}>      
+        <Image style={styles.imagemLoginAtivo} source={require("../../assets/6-removebg-preview.png")} />
         <Text style={styles.textoLoginAtivo}>Olá, {usuarioLogado && usuarioLogado.nome}</Text>
 
         <Image style={styles.fotoAvatar} source={require(`../../assets/avatar${RANDOM_AVATAR}.png`)} />

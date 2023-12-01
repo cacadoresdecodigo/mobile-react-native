@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 24,
-    gap: 30,
+    paddingBottom: 8,
+    gap: 26,
   },
   divisor: {
     backgroundColor: "#FFCF48",
@@ -37,13 +38,15 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: "#C0C0C0",
     gap: 2,
+    height: 180,
+    width: 390,
   },
   textoCard: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#2A5A63",
     fontWeight: "600",
   },
-  botao: {    
+  botao: {
     width: 320,
     borderWidth: 1,
     padding: 10,
@@ -52,17 +55,6 @@ const styles = StyleSheet.create({
     borderColor: "#2A5A63",
     marginTop: 16,
   },
-  textoBotao: {
-    fontSize: 22,
-    textAlign: "center",
-    color: "#2A5A63",
-  },
-  voltar: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingBottom: 50,
-  },
-
 });
 
 export default styles;

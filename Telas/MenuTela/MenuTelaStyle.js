@@ -17,8 +17,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 20,
-    gap: 5,
+    paddingTop: 20,  
   },
   botao: {
     width: 320,
@@ -49,11 +48,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: "#ab1d1d",
+    backgroundColor: "#FFCF48",
     borderColor: "#C0C0C0",
-    marginTop: 16
+    marginTop: 12,
   },
   textoBotaoSair: {
+    fontSize: 22,
+    textAlign: "center",
+    color: "#2A5A63",
+  },
+  botaoExcluir: {
+    width: 320,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#ab1d1d",
+    borderColor: "#C0C0C0",
+    marginTop: 12,
+  },
+  textoBotaoExcluir: {
     fontSize: 22,
     textAlign: "center",
     color: "#e3e3e3",

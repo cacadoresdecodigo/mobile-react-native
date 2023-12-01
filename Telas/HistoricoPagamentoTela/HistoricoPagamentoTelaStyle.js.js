@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 24,
-    gap: 30,
+    paddingBottom: 8,
+    gap: 26,
   },
   divisor: {
     backgroundColor: "#FFCF48",
@@ -37,9 +38,11 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: "#C0C0C0",
     gap: 2,
+    height: 150,
+    width: 350,
   },
   textoCard: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#2A5A63",
     fontWeight: "600",
   },

@@ -57,7 +57,7 @@ export default function CadastrarTela() {
           <TextInput style={styles.inputs} value={email} onChangeText={setEmail} />
 
           <Text style={styles.textoInput}>SENHA</Text>
-          <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} />
+          <TextInput style={styles.inputs} value={senha} onChangeText={setSenha} secureTextEntry={true} />
 
           <TouchableOpacity style={styles.botao} title="Entrar" onPress={cadastrar}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
