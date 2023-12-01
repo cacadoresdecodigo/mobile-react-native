@@ -23,7 +23,7 @@ export default function HistoricoEntregaTela() {
           <Text style={styles.textoH1}>HISTÓRICO ENTREGAS</Text>
 
           <View style={styles.divisor}></View>
-          {usuarioLogado.email === "jenifer@mail.com" && (
+          {usuarioLogado.email === "joao@mail.com" && (
             <>
               <Card
                 status={"Em transporte"}
@@ -70,7 +70,7 @@ export default function HistoricoEntregaTela() {
             </>
           )}
 
-          {usuarioLogado.email !== "jenifer@mail.com" && (
+          {usuarioLogado.email !== "joao@mail.com" && (
             <>
               <NovoUsuario status={"Você ainda não possui entregas!"}></NovoUsuario>
             </>

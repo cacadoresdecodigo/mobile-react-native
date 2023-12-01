@@ -22,7 +22,7 @@ export default function HistoricoPagamentoTela() {
           <Text style={styles.textoH1}>HISTÓRICO PAGAMENTO</Text>
 
           <View style={styles.divisor}></View>
-          {usuarioLogado.email === "jenifer@mail.com" && (
+          {usuarioLogado.email === "joao@mail.com" && (
             <>
               <Card status={"Pago"} retirada={"Floripa Shopping"} plano={"R$ 19.90"} data={"10/11/2023"}></Card>
               <Card status={"Pago"} retirada={"Floripa Shopping"} plano={"R$ 19.90"} data={"10/10/2023"}></Card>
@@ -33,7 +33,7 @@ export default function HistoricoPagamentoTela() {
             </>
           )}
 
-          {usuarioLogado.email !== "jenifer@mail.com" && (
+          {usuarioLogado.email !== "joao@mail.com" && (
             <>
               <NovoUsuario status={"Você ainda não possui pagamentos!"}></NovoUsuario>
             </>
