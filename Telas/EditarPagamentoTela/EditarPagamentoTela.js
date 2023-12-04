@@ -21,7 +21,7 @@ export default function EditarPagamentoTela() {
   useEffect(() => {
     async function buscarPagamento() {
       const usuarioLogado = await getDataFromStorage("usuario-logado");
-      const response = await axios.get(`${API_BASE_URL}/pagamento/${usuarioLogado.pagamentoId}`);
+      const response = await axios.get(`${API_BASE_URL}/pagamento/${usuarioLogado.pagamento_id || usuarioLogado.pagamentoId}`);
       setNumeroCartao(response.data.numero_cartao);
       setNomeCartao(response.data.nome);
       setCpf(response.data.cpf);

@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     width: 320,
     height: 40,
     padding: 4,
-    fontSize: 16,
+    fontWeight: "600",
+    fontSize: 18,
     color: "#2A5A63",
   },
   botao: {
