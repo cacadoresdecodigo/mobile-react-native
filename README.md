@@ -1,6 +1,5 @@
 
-# Smart Locker Solutions
-
+## Smart Locker Solutions
 
 ## 💻 Projeto
 Esse é um projeto sobre smart locker utilizado para conclusão do segundo semestre do curso Técnico em Desenvolvimento de Sistemas do SENAI/Florianópolis.
@@ -14,7 +13,11 @@ O projeto foi desenvolvido durante as aulas de programação de aplicativos com 
 - CSS
 - Github
 
+## 👨‍💻 Orientações
 
+- npm install para instalar as dependências;
+- necessário configurar o seu IP no arquivo baseUrl.js;
+- npm run web para rodar o projeto
 
 
 
